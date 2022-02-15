@@ -16,14 +16,12 @@ class UI:
         self.classifier=ImageClassifier(self.fileName)
 
 @app.route("/",methods=['GET'])
-
-#@cross_origin()
-
+@cross_origin()
 def home():
     return render_template('index.html')
 
 @app.route("/predict",methods=['POST'])
-#@cross_origin
+@cross_origin()
 def predictRoute():
     image=request.json['image']
     decodeImage(image,fr_end.fileName)
@@ -33,4 +31,4 @@ def predictRoute():
 if __name__== "__main__":
     fr_end=UI()
 
-    app.run(host='127.0.0.1',port=8000,debug=True)
+    app.run(host='127.0.0.1',port=5000,debug=True)

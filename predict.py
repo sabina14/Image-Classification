@@ -40,7 +40,7 @@ class ImageClassifier:
             prediction = 'subway'
             return [{"image": prediction}]
         elif result[0][6] == 1:
-            prediction = 'Toystore'
+            prediction = 'Toy store'
             return [{"image": prediction}]
         elif result[0][7] == 1:
             prediction = 'WineCellar'
